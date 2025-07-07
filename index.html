@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id = "game">
-        <h1>Welcome to Ant Attack</h1>
+    <div id = "game" class = "container">
+        <h1>Welcome to Ant Attack! 🐜</h1>
         <div class="scoreboard">
-            Score: <span id="score">0</span>
-            High Score: <span id="highScore">0</span>
+                <div class = "score-card">
+            <h3>Score</h3>Score: <span id="score">0</span>
+            </div>
+            <div class = "score-card">
+                <h3>High Score</h3>High Score: <span id="highScore">0</span>
+            </div>
+            </div>
         </div>
+
+        <div class="controls">
         <button id="restartBtn">Restart</button>
         <button id="resetHighScoreBtn">Reset High Score</button>
-        <div id="gameArea"></div>
+        </div>
+        <div id="gameArea" class = "game-area"></div>
     </div>
     <audio id="smashSound" src="./assets/audio/smash.mp3" preload="auto"></audio>
 
