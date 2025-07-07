@@ -17,15 +17,16 @@
             <div class = "score-card">
                 <h3>High Score</h3>High Score: <span id="highScore">0</span>
             </div>
+            <div class = "score-card timer-card">
+                <h3>Time Left</h3>⏰ <span id="timer">90</span>s
             </div>
-
+</div>
         <div class="controls">
         <button id="restartBtn">Restart</button>
         <button id="resetHighScoreBtn">Reset High Score</button>
          <button class="help-btn" data-tooltip="🎯 Click ants before they escape!&#10;⚡ You have 1 second per ant&#10;🏆 Score points for each catch!">❓ Help</button>
         </div>
         <div id="gameArea" class = "game-area"></div>
-    </div>
     <audio id="smashSound" src="./assets/audio/smash.mp3" preload="auto"></audio>
 
     <script src="./script.js"></script>

@@ -169,6 +169,21 @@ button:hover {
     visibility: visible;
 }
 
+.timer-card {
+    background: linear-gradient(45deg, #2196F3, #21CBF3);
+    color: white;
+}
+
+.timer-card h3 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
 @keyframes wiggle {
     0%, 100% {
         transform: translate(-50%, -50%) rotate(-5deg);
