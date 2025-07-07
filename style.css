@@ -53,16 +53,21 @@ h1 {
 }
 
 #gameArea {
-    width: 100%;
+    width: 90%;
     height: 450px;
     position: relative;
     border: 2px dashed #333;
-    background: #bcd4bc;
+    background: 
+        radial-gradient(circle at 25% 25%, #4CAF50 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, #245726 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, #64ec69 1px, transparent 1px),
+        linear-gradient(45deg, #8bc34a 25%, transparent 25%),
+        linear-gradient(-45deg, #8bc34a 25%, transparent 25%), #c4edc6;
+    background-size: 20px 20px, 15px 15px, 25px 25px, 10px 10px, 12px 12px, 100% 100%;
     border: 3px solid #4CAF50;
     border-radius: 15px;
     overflow: hidden;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin: 20px auto 30px auto;
 }
 
 .ant {
@@ -115,6 +120,53 @@ button:active {
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.help-btn {
+    background: #2196F3;
+    color: white;
+    position: relative;
+}
+
+.help-btn::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    white-space: pre-line;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    text-align: left;
+}
+
+.help-btn::after {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+.help-btn:hover::before,
+.help-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 @keyframes wiggle {
