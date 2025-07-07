@@ -10,6 +10,7 @@ const restartBtn = document.getElementById('restartBtn');
 const resetHighScoreBtn = document.getElementById('resetHighScoreBtn');
 const gameArea = document.getElementById('gameArea');
 const smashSound = document.getElementById('smashSound');
+smashSound.volume = 0.1;
 
 highScoreDisplay.textContent = highScore;
 
@@ -35,7 +36,10 @@ function spawnAnt() {
         currentAnt = null; // Reset current ant
         score++;
         scoreDisplay.textContent = score;
-        smashSound.play();
+        if (smashSound) {
+            smashSound.volume = 0.1; // Set volume for the sound
+            smashSound.play();
+        }
 
         //high score checking
         if (score > highScore) {
