@@ -22,4 +22,6 @@ A fun, interactive web game where you smash ants as they randomly appear on the 
 
 ![image](https://github.com/user-attachments/assets/7d302148-241e-4876-80d4-77163b41b579)
 
-<sub>(Add a screenshot in the `/screenshots` folder)</sub>
+## 🎮 Play Now
+
+👉 **[Click here to play Ant Attack!](https://yurisha-bajracharya.github.io/Ant-Attack/)** 
