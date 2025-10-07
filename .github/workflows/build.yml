@@ -11,15 +11,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3 curl tidy
+
       - name: Validate HTML
         run: |
           echo "Validating HTML..."
           tidy -qe index.html
 
-      - name: Basic file test
+      - name: Run server test
         run: |
-          echo "Testing Ant-Attack website..."
-          ls -l
+          echo "Starting test server..."
+          python3 -m http.server 8080 &
+          sleep 3
+          curl -I http://localhost:8080
 
 
   build-job:
