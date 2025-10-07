@@ -19,12 +19,28 @@ During testing, the workflow failed with exit code 127 because some commands (`t
 
 **Fix:** I installed the missing dependencies with:
 
+```bash
 sudo apt-get update
-sudo apt-get install -y python3 curl tidy
+sudo apt-get install -y python3 curl tidy 
+```
 
 
 ## Step 2: Optional Dockerfile Bug
 I also introduced a fake base image:
 
+```bash
 FROM nginx:fake-tag
+```
 
+Docker failed with:
+
+failed to build: failed to solve: nginx:fake-tag: failed to resolve source metadata for docker.io/library/nginx:fake-tag: 
+![alt text](image-1.png)
+
+**Fix:** Corrected it to a valid base image:
+
+```bash
+FROM nginx:alpine
+```
+
+Workflow turned green after the fix.
