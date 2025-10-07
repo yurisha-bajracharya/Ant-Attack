@@ -11,10 +11,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Test if website builds
+      - name: Validate HTML
         run: |
-          echo "Testing website..."
-          ls -l  # just checks files exist 
+          echo "Validating HTML..."
+          tidy -qe index.html
+
+      - name: Run server test
+        run: |
+          echo "Starting test server..."
+          python3 -m http.server 8080 &
+          sleep 3
+          echo "Checking if server responds..."
+          curl -I http://localhost:8080
 
   build-job:
     runs-on: ubuntu-latest
